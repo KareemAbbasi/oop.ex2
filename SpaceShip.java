@@ -27,7 +27,7 @@ public abstract class SpaceShip{
     public abstract void doAction(SpaceWars game);
 
     /**
-     * This method 
+     * This method
      */
     public void doActionExtra() {
         //current energy goes up by one every round
@@ -38,11 +38,7 @@ public abstract class SpaceShip{
         // if shields are up reduce 3 energy units.
         // check if there is available energy if not turn off shield.
         if (isShieldUp){
-            if (currentEnergyLevel >= 3) {
-                currentEnergyLevel -= 3;
-            } else {
-                isShieldUp = false;
-            }
+            isShieldUp = false;
         }
     }
 
