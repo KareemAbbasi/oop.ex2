@@ -15,6 +15,9 @@ public abstract class SpaceShip{
     private int currentEnergyLevel = 190;
     private int health = 22;
 
+    private int currentRound = 0;
+    private int lastRoundShot = 0;
+
     protected boolean isShieldUp = false;
 
    
@@ -40,6 +43,8 @@ public abstract class SpaceShip{
         if (isShieldUp){
             isShieldUp = false;
         }
+
+        currentRound ++;
     }
 
     /**
@@ -109,7 +114,13 @@ public abstract class SpaceShip{
      * 
      * @return the image of this ship.
      */
-    public abstract Image getImage();
+    public Image getImage(){
+        if (isShieldUp){
+            return GameGUI.ENEMY_SPACESHIP_IMAGE_SHIELD;
+        } else {
+            return GameGUI.ENEMY_SPACESHIP_IMAGE;
+        }
+    }
 
     /**
      * Attempts to fire a shot.
@@ -117,9 +128,12 @@ public abstract class SpaceShip{
      * @param game the game object.
      */
     public void fire(SpaceWars game) {
-        if (currentEnergyLevel >= 19) {
-            currentEnergyLevel -= 19;
-            game.addShot(spaceShipPhysics);
+        if ((lastRoundShot != 0 && lastRoundShot + 7 <= currentRound) || lastRoundShot == 0) {
+            if (currentEnergyLevel >= 19) {
+                currentEnergyLevel -= 19;
+                game.addShot(spaceShipPhysics);
+                lastRoundShot = currentRound;
+            }
         }
 
     }
@@ -129,6 +143,7 @@ public abstract class SpaceShip{
      */
     public void shieldOn() {
         if (currentEnergyLevel >= 3){
+            currentEnergyLevel -= 3;
             isShieldUp = true;
         }
     }

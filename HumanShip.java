@@ -31,6 +31,8 @@ public class HumanShip extends SpaceShip {
 
         doActionExtra();
 
+        System.out.println(spaceShipPhysics.getAngle());
+
     }
 
     @Override
