@@ -4,10 +4,10 @@ public class SpaceShipFactory {
     public static SpaceShip[] createSpaceShips(String[] args) {
         HumanShip s1 = new HumanShip();
         //BasherShip s2 = new BasherShip();
-        AggressiveShip s2 = new AggressiveShip();
-        RunnerShip s3 = new RunnerShip();
-        RunnerShip s4 = new RunnerShip();
-        RunnerShip s5 = new RunnerShip();
+        HumanShip s2 = new HumanShip();
+        DrunkardShip s3 = new DrunkardShip();
+        HumanShip s4 = new HumanShip();
+        HumanShip s5 = new HumanShip();
         SpaceShip[] ss = new SpaceShip[5];
         ss[0] = s1;
         ss[1] = s2;

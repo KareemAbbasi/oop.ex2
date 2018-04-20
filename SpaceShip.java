@@ -15,7 +15,7 @@ public abstract class SpaceShip{
     private int currentEnergyLevel = 190;
     private int health = 22;
 
-    private int currentRound = 0;
+    protected int currentRound = 0;
     private int lastRoundShot = 0;
 
     protected boolean isShieldUp = false;
