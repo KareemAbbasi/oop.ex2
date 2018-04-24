@@ -2,7 +2,17 @@ import oop.ex2.GameGUI;
 
 import java.awt.*;
 
+/**
+ * This class is responsible for the ship that is controlled by the user.
+ */
+
 public class HumanShip extends SpaceShip {
+    /**
+     * Does the actions of this ship for this round.
+     * This is called once per round by the SpaceWars game driver.
+     *
+     * @param game the game object to which this ship belongs.
+     */
     public void doAction(SpaceWars game){
 
         GameGUI gameGUI = game.getGUI();
@@ -32,10 +42,13 @@ public class HumanShip extends SpaceShip {
         }
 
         doActionExtra();
-
-
     }
 
+    /**
+     * Overrides the original getImage in the SpaceShip class and returns the image of the HumanShip instead of the
+     * enemy ship.
+     * @return
+     */
     @Override
     public Image getImage() {
         if (isShieldUp){

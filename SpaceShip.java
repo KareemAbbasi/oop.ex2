@@ -3,10 +3,8 @@ import oop.ex2.*;
 
 /**
  * The API spaceships need to implement for the SpaceWars game. 
- * It is your decision whether SpaceShip.java will be an interface, an abstract class,
- *  a base class for the other spaceships or any other option you will choose.
- *  
- * @author oop
+ * This class is an abstract class with one abstract method and all the other SpaceShip types inherit this class.
+ *
  */
 public abstract class SpaceShip{
 

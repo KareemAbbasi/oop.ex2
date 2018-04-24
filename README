@@ -1,0 +1,42 @@
+kareem
+318378213
+Kareem Abbasi
+
+====================
+= FILE DESCRIPTION =
+====================
+1- SpaceShip.java - The class that is responsible for the main methods that each SpaceShip use.
+2- SpaceShipFactory.java - The class that is responsible for creating the SpaceShips according to the user input.
+3- AggressiveShip.java - The aggressive ship class.
+4- BasherShip.java - The Basher ship class.
+5- DrunkardShip.java - The Drunk ship class.
+6- HumanShip.java - The human ship class.
+7- RunnerShip.java - The runner ship class.
+8- SpecialShip.java - The Special ship class.
+9- README.
+
+
+==================
+=     DESIGN     =
+==================
+
+- The SpaceShips:
+--------------------
+The main SpaceShip class includes the main methods and variables that every SpaceShip in the game uses or has,
+such as: The health variable, the energyLevel variable, the fire() methods... etc. These methods don't change
+between different types so they are normal methods.
+
+I chose to make the SpaceShip class an abstract class in order to make the doAction() methods - which is called once
+per round in every SpaceShip - an abstract method. This forces any class that inherits the SpaceShip class to
+implement the doAction() methods or the program won't run. This saves us from making unnecessary errors.
+
+Each types of space ship inherits the SpaceShip class and implements the doAction() methods according to the way
+it moves in the game. When inheriting the SpaceShip class, each type of space ship can use the methods and the
+variables from the SpaceShip class easily.
+
+Not all the variables from the SpaceShip class can be accessed from its subclasses. The variables that need to be
+accessed from the subclasses are protected variables whereas the others are private. This in turns helps protecting
+the different variables.
+
+The HumanShip furthermore overrides the getImage() methods, which returns the image of the humna ship. But in
+all the other classes uses the implementation found in the SpaceShip class and returns the image of the enemy ship.

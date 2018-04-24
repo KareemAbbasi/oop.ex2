@@ -1,6 +1,13 @@
-import java.awt.*;
-
+/**
+ * The RunnerShip always tries to avoid other SpaceShips by running away.
+ */
 public class RunnerShip extends SpaceShip {
+    /**
+     * Does the actions of this ship for this round.
+     * This is called once per round by the SpaceWars game driver.
+     *
+     * @param game the game object to which this ship belongs.
+     */
     @Override
     public void doAction(SpaceWars game) {
         SpaceShip closest = game.getClosestShipTo(this);
