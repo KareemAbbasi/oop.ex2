@@ -21,13 +21,12 @@ public class SpecialShip extends SpaceShip{
 
         if (distance <= 0.21) {
             fire(game);
-        } else  if (distance <= 0.1) {
+        }
+        if (distance <= 0.1) {
             shieldOn();
         } else {
             shieldOff();
         }
-
-
 
         if (angleFromSpecial < 0){
             spaceShipPhysics.move(true, -1);
