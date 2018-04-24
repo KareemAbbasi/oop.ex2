@@ -10,14 +10,20 @@ import oop.ex2.*;
  */
 public abstract class SpaceShip{
 
+    /** The physics component for the SpaceShip.*/
     protected SpaceShipPhysics spaceShipPhysics = new SpaceShipPhysics();
+    /** The max energy level for the SpaceShip.*/
     private int maximalEnergyLevel = 210;
+    /** The current energy level for the SpaceShip.*/
     private int currentEnergyLevel = 190;
+    /** The health of the SpaceShip.*/
     private int health = 22;
 
+    /** The number of the current round since the beginning of the game.*/
     protected int currentRound = 0;
+    /** The number of the last round the ship shot in.*/
     private int lastRoundShot = 0;
-
+    /** A boolean variable that show if the ship has its shields up or not.*/
     protected boolean isShieldUp = false;
 
    
@@ -30,7 +36,7 @@ public abstract class SpaceShip{
     public abstract void doAction(SpaceWars game);
 
     /**
-     * This method
+     * Does the actions that all types of ships do in every round.
      */
     public void doActionExtra() {
         //current energy goes up by one every round
@@ -41,7 +47,11 @@ public abstract class SpaceShip{
         // if shields are up reduce 3 energy units.
         // check if there is available energy if not turn off shield.
         if (isShieldUp){
-            isShieldUp = false;
+            if (currentEnergyLevel >= 3) {
+                currentEnergyLevel -= 3;
+            } else {
+                isShieldUp = false;
+            }
         }
 
         currentRound ++;
@@ -146,6 +156,13 @@ public abstract class SpaceShip{
             currentEnergyLevel -= 3;
             isShieldUp = true;
         }
+    }
+
+    /**
+     * Turns the shield off.
+     */
+    public void shieldOff() {
+        isShieldUp = false;
     }
 
     /**

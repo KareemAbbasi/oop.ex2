@@ -8,6 +8,8 @@ public class BasherShip extends SpaceShip {
 
         if (distance <= 0.19) {
             shieldOn();
+        } else {
+            shieldOff();
         }
 
         if (angleFromBasher < 0){

@@ -23,6 +23,8 @@ public class HumanShip extends SpaceShip {
 
         if (gameGUI.isShieldsPressed()){
             shieldOn();
+        } else {
+            shieldOff();
         }
 
         if (gameGUI.isShotPressed()){
@@ -31,7 +33,6 @@ public class HumanShip extends SpaceShip {
 
         doActionExtra();
 
-        System.out.println(spaceShipPhysics.getAngle());
 
     }
 
