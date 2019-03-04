@@ -30,7 +30,6 @@ Each space ship has a set of different variables. None of them can be accessed f
 There are also variables that are the same across all the different types.
 Only some variables are accessible by all the different types.
 
-*************************
 
 ## The SpaceShips:
 
